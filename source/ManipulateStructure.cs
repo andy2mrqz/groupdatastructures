@@ -113,6 +113,7 @@ namespace GroupCSharp
                     break;
                 case 5:
                     stack.Clear();
+                    Console.WriteLine("Stack is cleared!\n");
                     break;
                 case 6:
                     Console.Clear();
@@ -177,6 +178,7 @@ namespace GroupCSharp
                     break;
                 case 5:
                     queue.Clear();
+                    Console.WriteLine("Queue is cleared!\n");
                     break;
                 case 6:
                     Console.Clear();
@@ -251,6 +253,7 @@ namespace GroupCSharp
                     break;
                 case 5:
                     dictionary.Clear();
+                    Console.WriteLine("Dictionary is cleared!\n");
                     break;
                 case 6:
                     Console.Clear();
