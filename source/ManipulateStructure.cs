@@ -65,16 +65,6 @@ namespace GroupCSharp
             return item;
         }
 
-        public void Clear()
-        {
-
-        }
-
-        public void Search()
-        {
-
-        }
-
         public void modifyStack(int operation, ref Stack<string> stack)
         {
             switch (operation)
@@ -123,7 +113,35 @@ namespace GroupCSharp
                     stack.Clear();
                     break;
                 case 6:
-                    Search();
+                    Console.Clear();
+                                    Console.WriteLine("Please enter value to search for:");
+                                    string sSearchStackFor = Console.ReadLine();
+                                    Stopwatch sw = new Stopwatch();
+                                    sw.Start();
+                                    stack.Contains(sSearchStackFor);
+                                    sw.Stop();
+                                    // Get the elapsed time as a TimeSpan value.
+                                    TimeSpan ts = sw.Elapsed;
+
+                                    // Format and display the TimeSpan value.
+                                    string sElapsedTime = String.Format("{0:00}.{1:00}",
+                                        ts.Seconds,
+                                        ts.Milliseconds);
+
+                                    if (stack.Contains(sSearchStackFor))
+                                    {
+                                        Console.WriteLine("\r\nStack DOES contain " + sSearchStackFor);
+                                        Console.WriteLine("Time to search: " + sElapsedTime);
+                                        Console.WriteLine("\r\nPress any key to continue.");
+                                        Console.ReadKey();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("\r\nStack does NOT contain " + sSearchStackFor);
+                                        Console.WriteLine("Time to search: " + sElapsedTime);
+                                        Console.WriteLine("\r\nPress any key to continue.");
+                                        Console.ReadKey();
+                                    }
                     break;
             }
         }
@@ -164,7 +182,35 @@ namespace GroupCSharp
                     queue.Clear();
                     break;
                 case 6:
-                    Search();
+                    Console.Clear();
+                                    Console.WriteLine("Please enter value to search for:");
+                                    string sSearchQueueFor = Console.ReadLine();
+                                    Stopwatch sw = new Stopwatch();
+                                    sw.Start();
+                                    queue.Contains(sSearchQueueFor);
+                                    sw.Stop();
+                                    // Get the elapsed time as a TimeSpan value.
+                                    TimeSpan ts = sw.Elapsed;
+
+                                    // Format and display the TimeSpan value.
+                                    string sElapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                                        ts.Hours, ts.Minutes, ts.Seconds,
+                                        ts.Milliseconds / 10);
+
+                                    if (queue.Contains(sSearchQueueFor))
+                                    {
+                                        Console.WriteLine("\r\nQueue DOES contain " + sSearchQueueFor);
+                                        Console.WriteLine("Time to search: " + sElapsedTime);
+                                        Console.WriteLine("\r\nPress any key to continue.");
+                                        Console.ReadKey();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("\r\nQueue does NOT contain " + sSearchQueueFor);
+                                        Console.WriteLine("Time to search: " + sElapsedTime);
+                                        Console.WriteLine("\r\nPress any key to continue.");
+                                        Console.ReadKey();
+                                    }
                     break;
             }
         }
@@ -205,7 +251,57 @@ namespace GroupCSharp
                     dictionary.Clear();
                     break;
                 case 6:
-                    Search();
+                    Console.Clear();
+
+                                    if (dictionary.Count.Equals(0))
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine("No items in dictionary. Please add items to dictionary before removing.");
+                                        Console.WriteLine("Press any key to continue.");
+                                        Console.ReadKey();
+                                        break;
+                                    }
+
+                                    Console.WriteLine("Please enter value to search for:");
+                                    string sSearchDictionaryFor = Console.ReadLine();
+
+                                    if (dictionary.ContainsValue(sSearchDictionaryFor) & dictionary.Count > 0)
+                                    {
+                                        Stopwatch sw = new Stopwatch();
+                                        sw.Start();
+                                        dictionary.ContainsValue(sSearchDictionaryFor);
+                                        sw.Stop();
+                                        // Get the elapsed time as a TimeSpan value.
+                                        TimeSpan ts = sw.Elapsed;
+
+                                        // Format and display the TimeSpan value.
+                                        string sElapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                                            ts.Hours, ts.Minutes, ts.Seconds,
+                                            ts.Milliseconds / 10);
+
+                                        if (dictionary.ContainsValue(sSearchDictionaryFor) & dictionary.Count > 0)
+                                        {
+                                            Console.WriteLine("\r\nDictionary DOES contain " + sSearchDictionaryFor);
+                                            Console.WriteLine("Time to search: " + sElapsedTime);
+                                            Console.WriteLine("\r\nPress any key to continue.");
+                                            Console.ReadKey();
+                                        }
+
+                                        else
+                                        {
+                                            Console.WriteLine("\r\nDictionary does NOT contain " + sSearchDictionaryFor);
+                                            Console.WriteLine("Time to search: " + sElapsedTime);
+                                            Console.WriteLine("\r\nPress any key to continue.");
+                                            Console.ReadKey();
+                                        }
+                                    }
+
+                                    else
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine("Dictionary does not contain this value. Press any key to continue.");
+                                        Console.ReadKey();
+                                    }
                     break;
             }
         }
