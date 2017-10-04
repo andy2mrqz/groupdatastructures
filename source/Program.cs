@@ -2,7 +2,7 @@
  * Andrew Marquez, Evan McDaniel, Nick Trowbridge, Riley Wells
  * 
  * This program will prompt the user to run operations on stacks, queues, or dictionaries.  It prompts which data structure
- * the user would like to manipulate, then moves onto the ManipulateStructure.cs file to show menus with operations that can be
+ * the user would like to manipulate, then moves on to the ManipulateStructure.cs file to show menus with operations that can be
  * performed there.  Users can add items, display the contents, remove individual items, or clear the data structure completely.
  * It also can tell you how fast each data structure searches for a particular item.
  * 
